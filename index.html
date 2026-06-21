@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ShahJalal - Software Engineer Portfolio | Python, Java, Angular Expert" />
+    <meta name="keywords" content="Shah Jalal, Software Engineer, Full Stack Developer, Python, Java, Angular" />
+    <meta name="author" content="Shah Jalal" />
+    <title>Shah Jalal | Software Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/icons/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="assets/images/icons/apple-touch-icon.png" />
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">J<span>.</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home/Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="badge">Available for Work</span>
+                    <h1>Hi, I'm <span class="highlight">Shah Jalal</span></h1>
+                    <h2>Software Engineer</h2>
+                    <p class="hero-description">
+                        Building scalable web applications with Python, Java, and Angular.
+                        Intern at Blinkit (Zomato) | ML & DL Enthusiast
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Hire Me
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-code"></i> View Work
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:shahjalal99bd@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/jalal99rock" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shah-jalal-sj99/" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="tel:+8801580461936" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-wrapper">
+                        <img src="assets/images/profile/profile-photo.jpg" 
+                             alt="Shah Jalal - Software Engineer" 
+                             class="profile-img"
+                             onerror="this.src='https://ui-avatars.com/api/?name=Shah+Jalal&background=667eea&color=fff&size=200'" />
+                        <div class="floating-badge experience-badge">
+                            <i class="fas fa-briefcase"></i>
+                            <span>4+ Months Exp</span>
+                        </div>
+                        <div class="floating-badge projects-badge">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>10+ Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2>Who I Am</h2>
+                <p class="section-subtitle">Passionate developer creating impactful solutions</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a <strong>Software Engineer</strong> with internship experience at 
+                        <strong>Blinkit (Zomato)</strong>, specializing in backend API development 
+                        and database management. Proficient in <strong>Python, Java, and Angular</strong>, 
+                        with hands-on projects in machine learning and deep learning.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Months Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Features Engineered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime Achieved</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <!-- PDF Download -->
+                        <a href="assets/files/Jalal_resume.pdf" 
+                        class="btn btn-primary" 
+                        download="Jalal_resume.pdf"
+                        onclick="showNotification('Downloading Resume...', 'info')">
+                        <i class="fas fa-file-pdf"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Skills</span>
+                <h2>Technical Expertise</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Django</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Streamlit</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Database</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> ML/DL</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">XGBoost</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Core Concepts</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">OOP</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Experience</span>
+                <h2>Professional Journey</h2>
+                <p class="section-subtitle">Where I've worked and what I've built</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Backend Developer Intern</h3>
+                            <span class="company"><i class="fas fa-building"></i> Blinkit (Zomato)</span>
+                            <span class="date"><i class="fas fa-calendar"></i> Jan 2025 - Apr 2025</span>
+                        </div>
+                        <ul class="achievements">
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Designed and deployed RESTful APIs for product catalog management, 
+                                handling <strong>1,200+ daily product updates</strong> with 99.9% uptime
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Optimized MySQL database queries, reducing product data fetch time 
+                                by <strong>35%</strong> (from 180ms to 117ms)
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Collaborated with frontend team for <strong>10,000+ daily active users</strong>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Implemented automated data validation scripts, reducing manual 
+                                errors by <strong>60%</strong>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Participated in daily agile stand-ups and sprint planning, 
+                                delivering all tasks across <strong>4 sprints</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Projects</span>
+                <h2>Featured Work</h2>
+                <p class="section-subtitle">Projects that showcase my skills</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/road-accident.png" 
+                             alt="Road Accident Analysis Project" 
+                             class="project-image"
+                             onerror="this.src='https://via.placeholder.com/600x400/667eea/ffffff?text=Road+Accident+Analysis'" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <h3>Road Accident Analysis</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>ML</span>
+                            <span>Streamlit</span>
+                            <span>FastAPI</span>
+                            <span>Docker</span>
+                        </div>
+                        <p>
+                            Built XGBoost model with <strong>85% accuracy</strong> for 4-level accident 
+                            severity prediction. Engineered 20+ features and deployed interactive dashboard.
+                        </p>
+                        <ul class="project-features">
+                            <li>✅ Automated data pipeline improving accuracy by 15%</li>
+                            <li>✅ 5 visualization modules in Streamlit</li>
+                            <li>✅ 8 FastAPI endpoints for real-time/batch predictions</li>
+                            <li>✅ 7 ML algorithms with hyperparameter tuning</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Jalal99rock/road-accident-analysis" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="#" class="btn btn-small btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/GRAE.png" 
+                             alt="Age and Gender Detection Project" 
+                             class="project-image"
+                             onerror="this.src='https://via.placeholder.com/600x400/764ba2/ffffff?text=Age+%26+Gender+Detection'" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Age & Gender Detection</h3>
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>OpenCV</span>
+                            <span>CNN</span>
+                        </div>
+                        <p>
+                            CNN model on <strong>20,000+</strong> facial images achieving 
+                            <strong>84%</strong> gender accuracy and <strong>3.33 years</strong> MAE 
+                            for age estimation.
+                        </p>
+                        <ul class="project-features">
+                            <li>✅ Data augmentation (4x dataset diversity)</li>
+                            <li>✅ Real-time face detection at 15+ FPS</li>
+                            <li>✅ Under 200ms prediction time</li>
+                            <li>✅ Suitable for retail demographic analysis</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Jalal99rock/GRAE" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="assets/images/projects/chatbot.png" 
+                             alt="Personal and Technical Companion" 
+                             class="project-image"
+                             onerror="this.src='https://via.placeholder.com/600x400/f093fb/ffffff?text=Personal+Companion'" />
+                    </div>
+                    <div class="project-content">
+                        <div class="project-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Personal & Technical Companion</h3>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Django</span>
+                            <span>MySQL</span>
+                            <span>NLP</span>
+                        </div>
+                        <p>
+                            Full-stack digital assistant with <strong>15+</strong> REST endpoints, 
+                            glass-morphism UI, and <strong>90%</strong> accuracy on developer queries.
+                        </p>
+                        <ul class="project-features">
+                            <li>✅ 8 reusable React components (40% less code duplication)</li>
+                            <li>✅ 6-table MySQL database with optimized queries</li>
+                            <li>✅ 60% response time reduction</li>
+                            <li>✅ 45% increase in user engagement</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/Jalal99rock/personal_technical_companion" target="_blank" class="btn btn-small">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Education</span>
+                <h2>Academic Background</h2>
+                <p class="section-subtitle">Where I learned and grew</p>
+            </div>
+            <div class="education-card">
+                <div class="edu-header">
+                    <h3>Bachelor of Technology</h3>
+                    <span class="edu-institution">Jain University, Bengaluru</span>
+                    <span class="edu-date">2020 - 2025</span>
+                </div>
+                <p><strong>Major:</strong> Computer Science (Software Engineering)</p>
+                <div class="edu-details">
+                    <div class="edu-item">
+                        <i class="fas fa-book"></i>
+                        <span><strong>Relevant Courses:</strong> C, HTML, Python, Java, DBMS, Agile Development</span>
+                    </div>
+                    <div class="edu-item">
+                        <i class="fas fa-users"></i>
+                        <span><strong>Clubs:</strong> FOSSS CLUB, iCode</span>
+                    </div>
+                    <div class="edu-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <span><strong>Dissertation:</strong> Communication & Project Management in Software Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Let's Connect</h2>
+                <p class="section-subtitle">Have a project in mind? Reach out!</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:shahjalal99bd@gmail.com">shahjalal99bd@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+8801580461936">+880 15804 61936</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <span>51/A, 1 Panthapath, Dhaka 1205</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/jalal99rock" target="_blank">github.com/jalal99rock</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject" />
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Shah Jalal. Built with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+                <div class="footer-social">
+                    <a href="mailto:shahjalal99bd@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/jalal99rock" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shah-jalal-sj99/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
