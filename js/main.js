@@ -2,18 +2,47 @@
 // NAVIGATION
 // ========================================
 
-// Mobile menu toggle
+// ========================================
+// MOBILE MENU - Enhanced
+// ========================================
+
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');
+const menuOverlay = document.getElementById('menuOverlay');
 
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
+function toggleMenu() {
+    navLinks.classList.toggle('active');
+    if (menuOverlay) menuOverlay.classList.toggle('active');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 }
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', toggleMenu);
+}
+
+// Close menu on overlay click
+if (menuOverlay) {
+    menuOverlay.addEventListener('click', toggleMenu);
+}
+
+// Close menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        toggleMenu();
+    }
+});
 
 // ========================================
 // NAVBAR SCROLL EFFECT
@@ -55,6 +84,294 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// ========================================
+// BLOG FUNCTIONALITY
+// ========================================
+
+function openBlog(postId) {
+    const blogPosts = {
+        blog1: {
+            title: 'Optimizing Database Queries: My Experience at Blinkit',
+            content: `
+                <h2>Optimizing Database Queries: My Experience at Blinkit</h2>
+                <p><strong>Date:</strong> June 2025</p>
+                <p>During my internship at Blinkit (Zomato), I was tasked with optimizing the product catalog database queries. The existing queries were taking approximately 180ms to fetch product data.</p>
+                <h3>Challenges</h3>
+                <ul>
+                    <li>Large product database with 1,200+ daily updates</li>
+                    <li>Multiple JOIN operations across 6+ tables</li>
+                    <li>Real-time data requirements for 10,000+ daily active users</li>
+                </ul>
+                <h3>Solutions Implemented</h3>
+                <ul>
+                    <li>Added proper indexing on frequently queried columns</li>
+                    <li>Optimized JOIN operations using INNER JOIN instead of LEFT JOIN where possible</li>
+                    <li>Implemented query caching for frequently accessed data</li>
+                    <li>Used EXPLAIN to analyze and optimize query execution plans</li>
+                </ul>
+                <h3>Results</h3>
+                <ul>
+                    <li>✅ Query time reduced from 180ms to 117ms (35% improvement)</li>
+                    <li>✅ Response time improved for 10,000+ daily users</li>
+                    <li>✅ Reduced server load and improved scalability</li>
+                </ul>
+                <p><strong>Key Takeaway:</strong> Always profile your queries before and after optimization. Even small improvements can have a significant impact on user experience at scale.</p>
+            `
+        },
+        blog2: {
+            title: 'Building a CNN for Age & Gender Detection',
+            content: `
+                <h2>Building a CNN for Age & Gender Detection</h2>
+                <p><strong>Date:</strong> May 2025</p>
+                <p>I built a Convolutional Neural Network (CNN) to detect age and gender from facial images. The model was trained on 20,000+ facial images.</p>
+                <h3>Technical Approach</h3>
+                <ul>
+                    <li>Used TensorFlow/Keras for model building</li>
+                    <li>Preprocessed images using OpenCV</li>
+                    <li>Applied data augmentation (rotation, flipping, brightness adjustment)</li>
+                    <li>Used transfer learning with pre-trained models</li>
+                </ul>
+                <h3>Results</h3>
+                <ul>
+                    <li>✅ 84% accuracy on gender prediction</li>
+                    <li>✅ Mean Absolute Error of 3.33 years for age estimation</li>
+                    <li>✅ Real-time detection at 15+ FPS</li>
+                    <li>✅ Under 200ms prediction time</li>
+                </ul>
+                <p><strong>Key Takeaway:</strong> Data augmentation is crucial for preventing overfitting and improving model generalization.</p>
+            `
+        },
+        blog3: {
+            title: 'Deploying ML Models with Docker & FastAPI',
+            content: `
+                <h2>Deploying ML Models with Docker & FastAPI</h2>
+                <p><strong>Date:</strong> April 2025</p>
+                <p>I containerized my road accident analysis ML model using Docker and deployed it with FastAPI.</p>
+                <h3>Why Docker & FastAPI?</h3>
+                <ul>
+                    <li>Docker ensures consistent environments across development and production</li>
+                    <li>FastAPI provides automatic Swagger documentation</li>
+                    <li>Both are lightweight and performant</li>
+                </ul>
+                <h3>Implementation Steps</h3>
+                <ol>
+                    <li>Created Dockerfile with all dependencies</li>
+                    <li>Built FastAPI endpoints for predictions</li>
+                    <li>Tested locally with Docker Compose</li>
+                    <li>Deployed to cloud with 100% success rate</li>
+                </ol>
+                <p><strong>Key Takeaway:</strong> Containerization makes deployments reliable and reproducible. Always test locally before deploying to production.</p>
+            `
+        }
+    };
+    
+    const post = blogPosts[postId];
+    if (!post) return;
+    
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'blog-modal';
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    `;
+    
+    const content = document.createElement('div');
+    content.style.cssText = `
+        background: white;
+        max-width: 700px;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 2rem;
+        border-radius: 12px;
+        position: relative;
+    `;
+    content.innerHTML = `
+        <button onclick="this.closest('.blog-modal').remove()" style="
+            position: sticky;
+            top: 0;
+            float: right;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #333;
+        ">×</button>
+        ${post.content}
+    `;
+    
+    modal.appendChild(content);
+    document.body.appendChild(modal);
+    
+    // Close on click outside
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.remove();
+    });
+}
+
+// ========================================
+// DARK MODE TOGGLE
+// ========================================
+
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateDarkModeIcon(savedTheme);
+}
+
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateDarkModeIcon(newTheme);
+    });
+}
+
+function updateDarkModeIcon(theme) {
+    const icon = darkModeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
+
+// System preference detection
+if (!savedTheme) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        updateDarkModeIcon('dark');
+    }
+}
+
+// ========================================
+// PROJECT FILTER SYSTEM
+// ========================================
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        const filterValue = button.dataset.filter;
+        
+        projectCards.forEach(card => {
+            if (filterValue === 'all' || card.dataset.category === filterValue) {
+                card.classList.remove('hide');
+                card.classList.add('show');
+            } else {
+                card.classList.add('hide');
+                card.classList.remove('show');
+            }
+        });
+    });
+});
+
+// ========================================
+// FLOATING SOCIAL WIDGET
+// ========================================
+
+function toggleSocialWidget() {
+    const socialIcons = document.querySelector('.social-icons');
+    socialIcons.classList.toggle('open');
+}
+
+// Close widget when clicking outside
+document.addEventListener('click', (e) => {
+    const widget = document.querySelector('.floating-social');
+    if (widget && !widget.contains(e.target)) {
+        document.querySelector('.social-icons')?.classList.remove('open');
+    }
+});
+
+// ========================================
+// TYPING STATUS ROTATOR
+// ========================================
+
+const statusMessages = [
+    'Available for opportunities 🚀',
+    'Open to collaboration 💡',
+    'Building amazing things ✨',
+    'Learning every day 📚',
+    'Ready for new challenges 💪'
+];
+
+let statusIndex = 0;
+
+function rotateStatus() {
+    const typingText = document.getElementById('typingText');
+    if (typingText) {
+        typingText.textContent = statusMessages[statusIndex];
+        statusIndex = (statusIndex + 1) % statusMessages.length;
+    }
+}
+
+// Change status every 3 seconds
+setInterval(rotateStatus, 3000);
+
+// ========================================
+// GITHUB CONTRIBUTION GRAPH
+// ========================================
+
+function generateContributionGraph() {
+    const container = document.getElementById('contributionGraph');
+    
+    // Generate random contribution data (In production, fetch from GitHub API)
+    const data = [];
+    const today = new Date();
+    const startDate = new Date(today);
+    startDate.setFullYear(today.getFullYear() - 1);
+    
+    for (let i = 0; i < 53 * 7; i++) {
+        const date = new Date(startDate);
+        date.setDate(date.getDate() + i);
+        if (date > today) break;
+        data.push({
+            date: date,
+            count: Math.floor(Math.random() * 8)
+        });
+    }
+    
+    // Create graph
+    const grid = document.createElement('div');
+    grid.className = 'graph-grid';
+    
+    data.forEach(day => {
+        const cell = document.createElement('div');
+        cell.className = `graph-cell level-${Math.min(4, Math.floor(day.count / 2))}`;
+        cell.title = `${day.date.toLocaleDateString()}: ${day.count} contributions`;
+        grid.appendChild(cell);
+    });
+    
+    container.innerHTML = '';
+    container.appendChild(grid);
+}
+
+// Call when page loads
+document.addEventListener('DOMContentLoaded', generateContributionGraph);
+
+
 
 // ========================================
 // BACK TO TOP BUTTON

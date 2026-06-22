@@ -20,6 +20,14 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -28,21 +36,26 @@
             <div class="nav-content">
                 <a href="#home" class="logo">J<span>.</span></a>
                 <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
                 <div class="menu-toggle" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </div>
+                <button id="darkModeToggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+</button>
             </div>
         </div>
     </nav>
-
+<div class="menu-overlay" id="menuOverlay"></div>
     <!-- Home/Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -55,6 +68,10 @@
                         Building scalable web applications with Python, Java, and Angular.
                         Intern at Blinkit (Zomato) | ML & DL Enthusiast
                     </p>
+                    <div class="typing-status">
+    <span class="typing-dot"></span>
+    <span class="typing-text" id="typingText">Available for opportunities</span>
+</div>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i> Hire Me
@@ -97,7 +114,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -134,9 +150,9 @@
                     </div>
                     <div style="text-align: center; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <!-- PDF Download -->
-                        <a href="assets/files/Jalal_Resume.pdf" 
+                        <a href="assets/files/Shah_Jalal_Resume.pdf" 
                         class="btn btn-primary" 
-                        download="Jalal_Resume.pdf"
+                        download="Shah_Jalal_Resume.pdf"
                         onclick="showNotification('Downloading Resume...', 'info')">
                         <i class="fas fa-file-pdf"></i> Download Resume
                         </a>
@@ -145,6 +161,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
@@ -276,9 +294,16 @@
                 <h2>Featured Work</h2>
                 <p class="section-subtitle">Projects that showcase my skills</p>
             </div>
-            <div class="projects-grid">
+            <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All Projects</button>
+    <button class="filter-btn" data-filter="ml">Machine Learning</button>
+    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+    <button class="filter-btn" data-filter="deeplearning">Deep Learning</button>
+</div>
+
+<div class="projects-grid" id="projectsGrid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                    <div class="project-card" data-category="ml">
                     <div class="project-image-wrapper">
                         <img src="assets/images/projects/road-accident.png" 
                              alt="Road Accident Analysis Project" 
@@ -319,7 +344,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" data-category="deeplearning">
                     <div class="project-image-wrapper">
                         <img src="assets/images/projects/GRAE.png" 
                              alt="Age and Gender Detection Project" 
@@ -357,7 +382,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" data-category="fullstack">
                     <div class="project-image-wrapper">
                         <img src="assets/images/projects/chatbot.png" 
                              alt="Personal and Technical Companion" 
@@ -396,6 +421,108 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+<section id="blog" class="blog">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Blog</span>
+            <h2>Technical Insights</h2>
+            <p class="section-subtitle">Sharing knowledge from my experience</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fas fa-database" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">June 2025</span>
+                    <h3>Optimizing Database Queries: My Experience at Blinkit</h3>
+                    <p>How I reduced product fetch time by 35% using MySQL optimization techniques...</p>
+                    <a href="#" class="read-more" onclick="openBlog('blog1')">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <i class="fas fa-robot" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">May 2025</span>
+                    <h3>Building a CNN for Age & Gender Detection</h3>
+                    <p>A deep dive into training a CNN model on 20,000+ facial images...</p>
+                    <a href="#" class="read-more" onclick="openBlog('blog2')">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="blog-content">
+                    <span class="blog-date">April 2025</span>
+                    <h3>Deploying ML Models with Docker & FastAPI</h3>
+                    <p>How I containerized my road accident analysis model with 100% deployment success...</p>
+                    <a href="#" class="read-more" onclick="openBlog('blog3')">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Testimonials</span>
+            <h2>What People Say</h2>
+            <p class="section-subtitle">Feedback from colleagues and mentors</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Shah Jalal consistently delivered high-quality code during his internship. His ability to optimize database queries saved us significant resources.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #667eea;">SM</div>
+                    <div class="author-info">
+                        <h4>Senior Manager</h4>
+                        <span>Blinkit (Zomato)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Shah Jalal's work on the road accident analysis project was impressive. He delivered a production-ready ML model with 85% accuracy.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #764ba2;">JD</div>
+                    <div class="author-info">
+                        <h4>Machine Learning Lead</h4>
+                        <span>AI Research Lab</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Shah Jalal built our full-stack digital assistant with exceptional quality. His attention to detail and problem-solving skills are top-notch.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: #f093fb;">AK</div>
+                    <div class="author-info">
+                        <h4>Product Manager</h4>
+                        <span>Tech Startup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
@@ -428,6 +555,22 @@
             </div>
         </div>
     </section>
+    <!-- GitHub Contribution Graph -->
+<section id="contributions" class="contributions">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Activity</span>
+            <h2>GitHub Contributions</h2>
+            <p class="section-subtitle">My coding activity over time</p>
+        </div>
+        <div class="contribution-graph" id="contributionGraph">
+            <div class="graph-loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                Loading contributions...
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -518,5 +661,44 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Tawk.to Live Chat -->
+<!-- Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a3927f1452f781d473b4ce1/1jrnk81ub';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script -->
+
+<!-- Floating Social Media Widget -->
+<div class="floating-social">
+    <div class="social-toggle" onclick="toggleSocialWidget()">
+        <i class="fas fa-share-alt"></i>
+    </div>
+    <div class="social-icons">
+        <a href="https://github.com/jalal99rock" target="_blank" class="social-icon github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shah-jalal-sj99/" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://twitter.com/your-profile" target="_blank" class="social-icon twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://youtube.com/your-channel" target="_blank" class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="mailto:shahjalal99bd@gmail.com" class="social-icon email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+</div>
 </body>
 </html>
